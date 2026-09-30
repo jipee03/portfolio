@@ -1,14 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
-    'components/**/*.{vue,js}',
-    'layouts/**/*.vue',
-    'pages/**/*.vue',
-    'composables/**/*.{js,ts}',
-    'plugins/**/*.{js,ts}',
-    'App.{js,ts,vue}',
-    'app.{js,ts,vue}',
-    'nuxt.config.js',
+    'app/**/*.{vue,js,ts}',
   ],
   theme: {
     extend: {
@@ -32,19 +25,5 @@ module.exports = {
       },
     },
   },
-  plugins: [
-    require('tailwindcss-dark-mode'),
-  ],
   darkMode: 'class',
-  variants: {
-    backgroundColor: [
-      'dark',
-      'dark-hover',
-      'dark-group-hover',
-      'dark-even',
-      'dark-odd',
-    ],
-    borderColor: ['dark', 'dark-focus', 'dark-focus-within'],
-    textColor: ['dark', 'dark-hover', 'dark-active'],
-  },
 }

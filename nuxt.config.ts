@@ -1,57 +1,59 @@
+// GitHub Pages serves project sites from /<repo-name>/, so the deploy workflow sets
+// NUXT_APP_BASE_URL. Locally it stays '/'.
 export default defineNuxtConfig({
+
   modules: [
+    '@nuxt/eslint',
     '@vueuse/nuxt',
     '@pinia/nuxt',
     '@nuxtjs/color-mode',
     '@nuxtjs/tailwindcss',
-    '@intlify/nuxt3',
+    '@nuxtjs/i18n',
   ],
-  experimental: {
-    reactivityTransform: true,
-    viteNode: false,
-  },
-  plugins: [
-  ],
-  colorMode: {
-    classSuffix: '',
-  },
-  // https://github.com/nuxt/framework/issues/6204#issuecomment-1201398080
-  hooks: {
-    'vite:extendConfig': function (config: any, { isServer }: any) {
-      if (isServer) {
-        // Workaround for netlify issue
-        // https://github.com/nuxt/framework/issues/6204
-        config.build.rollupOptions.output.inlineDynamicImports = true
-      }
-    },
-  },
-  css: [
-    // 'primevue/resources/themes/bootstrap4-dark-blue/theme.css',
-    // 'primevue/resources/primevue.css',
-    // 'primeicons/primeicons.css',
-    '/assets/css/style.css',
-  ],
-  build: {
-    transpile: ['primevue', 'pinia-orm'],
-  },
-  tailwindcss: {
-    cssPath: '~/assets/css/tailwind.css',
-    configPath: 'tailwind.config.js',
-    exposeConfig: true,
-    injectPosition: 0,
-    viewer: true,
-  },
+
+  css: ['~/assets/css/style.css'],
+
   vue: {
-    config: {
-      productionTip: true,
-      warn: false,
-    },
     compilerOptions: {
       isCustomElement: tag => tag.startsWith('ion-'),
     },
   },
-  loading: {
-    color: 'blue',
-    height: '5px',
+
+  colorMode: {
+    classSuffix: '',
+  },
+  compatibilityDate: '2026-09-30',
+
+  nitro: {
+    prerender: {
+      crawlLinks: true,
+      routes: ['/', '/portfolio', '/resume', '/blog', '/contact', '/404'],
+    },
+  },
+
+  eslint: {
+    config: {
+      stylistic: true,
+    },
+  },
+
+  i18n: {
+    locales: [
+      { code: 'en', language: 'en-US', file: 'en.json' },
+      { code: 'tr', language: 'tr-TR', file: 'tr.json' },
+    ],
+    defaultLocale: 'en',
+    // Static hosting: keep one URL per page and remember the language in a cookie.
+    strategy: 'no_prefix',
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'locale',
+      fallbackLocale: 'en',
+    },
+  },
+
+  tailwindcss: {
+    cssPath: '~/assets/css/tailwind.css',
+    configPath: 'tailwind.config.js',
   },
 })
