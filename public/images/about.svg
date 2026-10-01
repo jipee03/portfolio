@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="#c9363d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- placeholder: replace with your own artwork -->
+  <rect x="96" y="80" width="320" height="352" rx="28" fill="#c9363d" fill-opacity=".08"/>
+  <circle cx="256" cy="200" r="52" fill="#c9363d" fill-opacity=".15"/>
+  <path d="M160 360c0-52 43-84 96-84s96 32 96 84"/>
+  <path d="M156 176c8-58 48-86 100-86s92 28 100 86"/>
+  <path d="M136 176h240"/>
+  <path d="M152 400h208" stroke-opacity=".5"/>
+</svg>

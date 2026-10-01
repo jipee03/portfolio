@@ -12,16 +12,16 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "translate": "node --env-file-if-exists=.env scripts/translate.mjs",
+    "translate:check": "node scripts/translate.mjs --check"
   },
   "dependencies": {
     "@nuxtjs/color-mode": "^4.0.1",
     "@nuxtjs/i18n": "^10.6.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
-    "@pinia/nuxt": "^1.0.2",
     "@vueuse/nuxt": "^15.0.0",
     "nuxt": "^4.5.2",
-    "pinia": "^4.0.3",
     "vue": "^3.5.43",
     "vue-router": "^5.3.1"
   },

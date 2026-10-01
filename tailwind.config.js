@@ -1,3 +1,11 @@
+import defaultTheme from 'tailwindcss/defaultTheme'
+
+// Colors are CSS variables holding "r g b" channels (see app/assets/css/style.css),
+// so opacity modifiers like `bg-primary/10` work and dark mode only swaps variables.
+function token(name) {
+  return `rgb(var(--${name}) / <alpha-value>)`
+}
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,22 +14,25 @@ export default {
   theme: {
     extend: {
       colors: {
-        ranko: {
-          50: '#FCE5C1',
-          100: '#FBDDAD',
-          200: '#F9CD87',
-          300: '#F7BC60',
-          400: '#F5AC39',
-          500: '#F39C12',
-          600: '#C37B0A',
-          700: '#8E5A07',
-          800: '#583804',
-          900: '#231602',
-        },
-        vue: '#42b883',
-        laravel: '#f55247',
-        html5: '#e34f26',
-        css3: '#3C99DC',
+        'background': token('background'),
+        'foreground': token('foreground'),
+        'card': token('card'),
+        'border': token('border'),
+        'input': token('input'),
+        'ring': token('ring'),
+        'muted': token('muted'),
+        'muted-foreground': token('muted-foreground'),
+        'accent': token('accent'),
+        'accent-foreground': token('accent-foreground'),
+        'primary': token('primary'),
+        'primary-foreground': token('primary-foreground'),
+      },
+      borderColor: {
+        DEFAULT: token('border'),
+      },
+      fontFamily: {
+        sans: ['"Instrument Sans"', ...defaultTheme.fontFamily.sans],
+        handwriting: ['Caveat', 'cursive'],
       },
     },
   },

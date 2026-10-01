@@ -32,6 +32,9 @@ jobs:
 
       - run: pnpm lint
 
+      # Fails if en.json changed but `pnpm translate` wasn't run and committed.
+      - run: pnpm translate:check
+
       - name: Generate static site
         run: pnpm generate
         env:

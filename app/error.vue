@@ -5,5 +5,7 @@ useHead({ title: () => c.value.meta.notFound })
 </script>
 
 <template>
-  <NotFound />
+  <NuxtLayout>
+    <NotFound />
+  </NuxtLayout>
 </template>

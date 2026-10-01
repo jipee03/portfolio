@@ -1,0 +1,357 @@
+{
+  "nav": {
+    "about": "About Me",
+    "projects": "Projects",
+    "writing": "Blog",
+    "github": "GitHub",
+    "home": "home",
+    "skip": "Skip to content",
+    "menu": "Open menu",
+    "closeMenu": "Close menu",
+    "mainNav": "Main navigation",
+    "language": "Language",
+    "theme": "Theme",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "home": {
+    "eyebrow": "Vue · Nuxt · Clean interfaces",
+    "title": "Building Reliable Web Experiences.",
+    "description": "Civil engineer turned web developer, crafting maintainable interfaces and polished products with Vue, Nuxt and modern tooling.",
+    "projects": "Projects",
+    "github": "GitHub",
+    "caption": "Built in Porto · shipped worldwide",
+    "featured": {
+      "title": "Featured projects",
+      "description": "Focused projects built around real, recurring needs."
+    },
+    "viewAll": "View All",
+    "about": {
+      "title": "Engineering mindset, product focus",
+      "text": "I moved from civil engineering into software, carrying the same respect for sound structures, clear constraints and dependable outcomes into every product I build.",
+      "link": "About Me",
+      "note": "solid foundations, solid code",
+      "facts": [
+        {
+          "label": "Background",
+          "value": "Civil Engineering"
+        },
+        {
+          "label": "Base",
+          "value": "Porto, Portugal"
+        },
+        {
+          "label": "Focus",
+          "value": "Web apps & tooling"
+        }
+      ]
+    },
+    "latest": {
+      "title": "Latest writing",
+      "description": "Practical notes on the web, engineering and the craft of building things that last."
+    }
+  },
+  "newsletter": {
+    "label": "Email Address",
+    "eyebrow": "Field notes",
+    "title": "Notes worth keeping.",
+    "text": "Occasional writing on web projects, tooling and the decisions behind dependable products.",
+    "placeholder": "you@example.com",
+    "button": "Subscribe",
+    "note": "No noise. Unsubscribe whenever you want.",
+    "subject": "Subscribe me to the field notes"
+  },
+  "cta": {
+    "title": "Let’s build something dependable.",
+    "text": "Have a web project or an idea worth shipping? Start a conversation on GitHub or send me an email.",
+    "primary": "Start on GitHub",
+    "secondary": "Write Me"
+  },
+  "footer": {
+    "role": "Engineer Developer Builder",
+    "statement": "I build dependable web products, tools and open-source projects.",
+    "quick": "Quick links",
+    "connect": "Connect",
+    "social": "Social media",
+    "email": "Email",
+    "rights": "All rights reserved.",
+    "built": "Built in Porto · shipped worldwide."
+  },
+  "cookies": {
+    "title": "Cookies",
+    "text": "This site only stores your language and theme preferences, nothing else.",
+    "accept": "Got it",
+    "close": "Close"
+  },
+  "notFound": {
+    "eyebrow": "Error 404",
+    "title": "Page not found.",
+    "text": "The page you are looking for doesn’t exist or has been moved.",
+    "back": "Back home",
+    "projects": "See projects"
+  },
+  "about": {
+    "title": "About Me",
+    "eyebrow": "About Me",
+    "heading": "Engineering dependable software from real constraints.",
+    "description": "I am Gustavo Lima, a civil engineer turned web developer based in Porto, building maintainable interfaces, tools and products for the web.",
+    "experience": {
+      "title": "Experience",
+      "description": "A career spanning web development and civil engineering.",
+      "items": [
+        {
+          "period": "2023–Present",
+          "title": "Web Developer",
+          "org": "Freelance",
+          "text": "Designing and building websites and web apps with Vue and Nuxt, from first sketch to deployment."
+        },
+        {
+          "period": "2019–2023",
+          "title": "Site Engineer",
+          "org": "Construction",
+          "text": "Coordinated site works, quantities and documentation, learning to deliver to specification, on time and under real constraints."
+        },
+        {
+          "period": "2017–2019",
+          "title": "Junior Civil Engineer",
+          "org": "Engineering Office",
+          "text": "Supported structural and infrastructure projects with calculations, drawings and technical reports."
+        }
+      ]
+    },
+    "education": {
+      "title": "Education",
+      "items": [
+        {
+          "period": "2021–2022",
+          "title": "Modern Web Development",
+          "org": "Online courses",
+          "text": "Self-directed learning across JavaScript, Vue, Nuxt and Tailwind CSS, applied to personal and client projects."
+        },
+        {
+          "period": "2012–2017",
+          "title": "Civil Engineering",
+          "org": "University",
+          "text": "Undergraduate degree in Civil Engineering with a focus on structures and construction management."
+        }
+      ]
+    },
+    "working": {
+      "title": "Working set",
+      "description": "The technologies, interests and everyday tools behind the work.",
+      "sets": [
+        {
+          "label": "Technologies",
+          "tags": [
+            "Vue",
+            "Nuxt",
+            "JavaScript",
+            "TypeScript",
+            "Tailwind CSS",
+            "Pinia"
+          ]
+        },
+        {
+          "label": "AI Tools",
+          "tags": [
+            "Claude Code",
+            "GitHub Copilot"
+          ]
+        },
+        {
+          "label": "Interests",
+          "items": [
+            "Product design",
+            "Developer tools",
+            "Open source"
+          ]
+        },
+        {
+          "label": "Tools",
+          "tags": [
+            "pnpm",
+            "ESLint",
+            "GitHub Actions",
+            "VS Code"
+          ]
+        }
+      ]
+    },
+    "sponsor": {
+      "eyebrow": "Sponsorship",
+      "title": "Enjoying the open-source work?",
+      "text": "Stars, feedback and sponsorships on GitHub help me keep maintaining and shipping side projects.",
+      "button": "Support on GitHub",
+      "note": "thank you!"
+    },
+    "cta": {
+      "title": "Explore the work, or say hello.",
+      "text": "Browse the projects on GitHub, or get in touch on LinkedIn if you’d like to collaborate.",
+      "primary": "See projects",
+      "secondary": "LinkedIn"
+    }
+  },
+  "projects": {
+    "title": "Projects",
+    "eyebrow": "Selected work",
+    "description": "Focused web projects and tools built around real, recurring needs.",
+    "filterLabel": "Type",
+    "filters": {
+      "all": "All",
+      "open-source": "Open source",
+      "client": "Client work",
+      "personal": "Personal"
+    },
+    "types": {
+      "open-source": "Open source",
+      "client": "Client work",
+      "personal": "Personal"
+    },
+    "categoryLabel": "Web",
+    "empty": "No projects in this category yet.",
+    "items": [
+      {
+        "slug": "portfolio-website",
+        "type": "open-source",
+        "tags": [
+          "Nuxt",
+          "Vue",
+          "Tailwind"
+        ],
+        "url": "https://github.com/jipee03",
+        "title": "Portfolio Website",
+        "description": "This portfolio: a Nuxt 4 site with dark mode, two languages and static deployment to GitHub Pages."
+      },
+      {
+        "slug": "site-log",
+        "type": "client",
+        "tags": [
+          "Vue",
+          "Pinia",
+          "PWA"
+        ],
+        "url": "https://github.com/jipee03",
+        "title": "Site Log",
+        "description": "A mobile-first daily log for construction sites: progress, photos, weather and notes, working offline."
+      },
+      {
+        "slug": "beam-calculator",
+        "type": "open-source",
+        "tags": [
+          "JavaScript",
+          "Engineering"
+        ],
+        "url": "https://github.com/jipee03",
+        "title": "Beam Calculator",
+        "description": "A small browser tool that computes reactions, shear and bending moments for simply supported beams."
+      },
+      {
+        "slug": "quantity-takeoff",
+        "type": "client",
+        "tags": [
+          "Nuxt",
+          "Node.js"
+        ],
+        "url": "https://github.com/jipee03",
+        "title": "Quantity Takeoff",
+        "description": "Turns measurements into organised quantity sheets and cost estimates, ready to export."
+      },
+      {
+        "slug": "budget-tracker",
+        "type": "personal",
+        "tags": [
+          "Vue",
+          "Pinia"
+        ],
+        "url": "https://github.com/jipee03",
+        "title": "Budget Tracker",
+        "description": "A simple Vue app to track spending by category, with charts and monthly summaries."
+      },
+      {
+        "slug": "dotfiles",
+        "type": "personal",
+        "tags": [
+          "Shell",
+          "Linux"
+        ],
+        "url": "https://github.com/jipee03",
+        "title": "Dotfiles",
+        "description": "My Linux setup and developer tooling, scripted so a fresh machine is productive in minutes."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog",
+    "eyebrow": "Writing",
+    "description": "Practical notes on the web, engineering and the craft of building things that last.",
+    "filters": {
+      "all": "All",
+      "nuxt": "Nuxt",
+      "career": "Career",
+      "vue": "Vue",
+      "javascript": "JavaScript"
+    },
+    "filterLabel": "Filter articles by category",
+    "minRead": "min read",
+    "tagsLabel": "Tags",
+    "items": [
+      {
+        "slug": "building-a-portfolio-with-nuxt-4",
+        "category": "nuxt",
+        "date": "2026-08-24",
+        "minutes": 8,
+        "tags": [
+          "Nuxt",
+          "Vue",
+          "Tailwind CSS"
+        ],
+        "title": "Building a Portfolio with Nuxt 4",
+        "description": "How I built this site with Nuxt 4, Tailwind and a small content layer, and deployed it as a static site."
+      },
+      {
+        "slug": "from-civil-engineering-to-code",
+        "category": "career",
+        "date": "2026-05-12",
+        "minutes": 6,
+        "tags": [
+          "Career",
+          "Engineering"
+        ],
+        "title": "From Civil Engineering to Code",
+        "description": "What transferred, what didn’t, and why structural thinking turns out to be great preparation for software."
+      },
+      {
+        "slug": "dark-mode-with-tailwind-and-nuxt",
+        "category": "vue",
+        "date": "2025-11-03",
+        "minutes": 5,
+        "tags": [
+          "Vue",
+          "Tailwind CSS",
+          "Dark mode"
+        ],
+        "title": "Dark Mode with Tailwind and Nuxt",
+        "description": "A CSS-variable approach to theming that supports light, dark and system preference without flashes."
+      },
+      {
+        "slug": "estimating-quantities-with-javascript",
+        "category": "javascript",
+        "date": "2025-06-18",
+        "minutes": 7,
+        "tags": [
+          "JavaScript",
+          "Civil Engineering"
+        ],
+        "title": "Estimating Quantities with JavaScript",
+        "description": "Replacing spreadsheets with a few well-tested functions for quantity takeoff and cost estimates."
+      }
+    ]
+  },
+  "meta": {
+    "home": "Civil Engineer & Web Developer",
+    "about": "About Me",
+    "projects": "Projects",
+    "blog": "Blog",
+    "notFound": "Page not found"
+  }
+}

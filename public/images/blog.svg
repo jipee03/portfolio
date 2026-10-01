@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="none" stroke="#c9363d" stroke-width="8" stroke-linecap="round" stroke-linejoin="round">
+  <!-- placeholder: replace with your own artwork -->
+  <path d="M136 72h184l72 72v296a8 8 0 0 1-8 8H136a8 8 0 0 1-8-8V80a8 8 0 0 1 8-8z" fill="#c9363d" fill-opacity=".08"/>
+  <path d="M320 72v72h72"/>
+  <path d="M176 224h160M176 272h160M176 320h104" stroke-opacity=".6"/>
+  <path d="m400 336-112 112-44 10 10-44 112-112z" fill="#fafafa"/>
+  <path d="m384 352 32 32"/>
+</svg>

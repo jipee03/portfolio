@@ -1,227 +1,191 @@
 <script setup>
-useHead({
-})
+import { site } from '~/data/site'
 
-const { locale } = useI18n()
+const c = useSiteContent()
 
-/* Testimonials */
-const { data: testimonials } = await useFetch('/api/testimonials')
+useHead({ title: () => c.value.meta.home })
 
-const testimonialItem = ref({})
-const activeModal = ref(false)
-const activeOverlay = ref(false)
-
-function showTestimonial(id) {
-  testimonialItem.value = testimonials.value.find(item => item.id === id)
-  activeModal.value = true
-  activeOverlay.value = true
-}
-
-function closeTestimonaial() {
-  testimonialItem.value = {}
-  activeModal.value = false
-  activeOverlay.value = false
-}
-/* Testimonials */
-
-/* Services */
-const { data: services } = await useFetch('/api/services')
+const featured = computed(() => c.value.projects.items.slice(0, 2))
+const latest = computed(() => c.value.blog.items.slice(0, 2))
 </script>
 
 <template>
-  <article
-    class="about active"
-    data-page="about"
-  >
-    <header>
-      <h2 class="h2 article-title">
-        {{ $t('pageTitles.about') }}
-      </h2>
-    </header>
-
-    <section class="about-text">
-      <p>
-        I'm Creative Director and UI/UX Designer from Sydney, Australia, working in web development and print media.
-        I enjoy
-        turning complex problems into simple, beautiful and intuitive designs.
-      </p>
-
-      <p>
-        My job is to build your website so that it is functional and user-friendly but at the same time attractive.
-        Moreover, I
-        add personal touch to your product and make sure that is eye-catching and easy to use. My aim is to bring
-        across your
-        message and identity in the most creative way. I created web design for many famous brand companies.
-      </p>
-    </section>
-
-    <!-- service -->
-
-    <section class="service">
-      <h3 class="h3 service-title">
-        What i'm doing?
-      </h3>
-
-      <ul class="service-list">
-        <ServiceItem
-          v-for="service in services"
-          :key="service.id"
-          :service="service"
-        />
-      </ul>
-    </section>
-
-    <!-- testimonials -->
-
-    <section class="testimonials">
-      <h3 class="h3 testimonials-title">
-        Testimonials
-      </h3>
-
-      <ul class="testimonials-list has-scrollbar">
-        <li
-          v-for="testimonial in testimonials"
-          :key="testimonial.id"
-          class="testimonials-item"
-          @click="showTestimonial(testimonial.id)"
-        >
-          <div class="content-card">
-            <figure class="testimonials-avatar-box">
-              <img
-                :src="asset(testimonial.image)"
-                alt="Daniel lewis"
-                width="60"
-              >
-            </figure>
-
-            <h4 class="h4 testimonials-item-title">
-              {{ testimonial.title }}
-            </h4>
-
-            <div class="testimonials-text">
-              <p>{{ locale === 'en' ? testimonial.content?.en : testimonial.content?.tr }}</p>
-            </div>
-          </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- testimonials modal -->
-
-    <div
-      class="modal-container"
-      :class="{ active: activeModal }"
+  <div class="page-blocks">
+    <!-- Hero -->
+    <section
+      data-section="hero"
+      class="grid items-center gap-14 lg:grid-cols-[minmax(0,1.1fr)_minmax(300px,0.9fr)] lg:gap-16"
     >
-      <div
-        v-show="activeModal"
-        class="overlay"
-        :class="{ active: activeOverlay }"
-      />
-
-      <section class="testimonials-modal">
-        <button
-          class="modal-close-btn"
-          @click="closeTestimonaial"
-        >
-          <ion-icon name="close-outline" />
-        </button>
-
-        <div class="flex gap-5 mb-5 justify-start items-center">
-          <div class="modal-avatar-box">
-            <img
-              :src="asset(testimonialItem.image)"
-              alt="Daniel lewis"
-              width="80"
-            >
-          </div>
-
-          <div class="modal-content">
-            <h4 class="h3 modal-title">
-              {{ testimonialItem.title }}
-            </h4>
-            <time datetime="2021-06-14">14 June, 2021</time>
-          </div>
-        </div>
-
-        <div class="flex gap-5 items-start">
-          <img
-            class="my-auto hidden md:block"
-            :src="asset('/images/icon-quote.svg')"
-            alt="quote icon"
-          >
-          <p
-            class="text-justify text-gray-400 text-sm md:text-md"
-            v-html="locale === 'en' ? testimonialItem.content?.en : testimonialItem.content?.tr"
+      <div class="reveal max-w-3xl">
+        <p class="flex items-center gap-2.5 font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          <span
+            class="size-1.5 shrink-0 animate-pulse rounded-full bg-primary"
+            aria-hidden="true"
           />
+          <span class="type-caret">{{ c.home.eyebrow }}</span>
+        </p>
+        <h1 class="mt-5 text-balance text-4xl font-semibold leading-[1.05] tracking-[-0.04em] sm:text-6xl">
+          {{ c.home.title }}
+        </h1>
+        <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-muted-foreground">
+          {{ c.home.description }}
+        </p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <BaseButton to="/projects">
+            <ion-icon name="albums-outline" />
+            <span>{{ c.home.projects }}</span>
+          </BaseButton>
+          <BaseButton
+            :href="site.github"
+            variant="secondary"
+          >
+            <ion-icon name="logo-github" />
+            <span>{{ c.home.github }}</span>
+          </BaseButton>
         </div>
-        <div class="mt-2 flex justify-end text-sm text-gray-600 italic">
-          Company Co.
+      </div>
+
+      <figure class="reveal mx-auto w-full max-w-md">
+        <div class="relative aspect-square">
+          <span
+            class="absolute inset-[10%] rounded-full bg-primary/10 blur-3xl"
+            aria-hidden="true"
+          />
+          <span
+            class="absolute inset-x-[12%] top-[8%] aspect-square rounded-full border border-primary/15"
+            aria-hidden="true"
+          />
+          <span
+            class="orbit absolute inset-x-[12%] top-[8%] aspect-square rounded-full border border-dashed border-primary/25"
+            aria-hidden="true"
+          >
+            <span class="absolute -top-[3px] left-1/2 size-1.5 -translate-x-1/2 rounded-full bg-primary" />
+          </span>
+          <span
+            class="absolute bottom-1 left-1/2 h-6 w-2/3 -translate-x-1/2 rounded-[50%] bg-primary/25 blur-xl"
+            aria-hidden="true"
+          />
+          <!-- Avatar: replace public/images/my-avatar.png with a larger, square portrait. -->
+          <img
+            :src="asset(site.avatar)"
+            :alt="site.name"
+            width="500"
+            height="500"
+            class="absolute inset-x-[22%] top-[14%] w-[56%] object-contain"
+          >
         </div>
-      </section>
+        <span
+          class="block h-px w-full bg-gradient-to-r from-transparent via-primary/40 to-transparent"
+          aria-hidden="true"
+        />
+        <figcaption class="mt-4 text-center font-mono text-[0.7rem] uppercase tracking-[0.14em] text-muted-foreground">
+          {{ c.home.caption }}
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- Featured projects -->
+    <section data-section="projects">
+      <SectionHeading
+        :title="c.home.featured.title"
+        :description="c.home.featured.description"
+        :link-label="c.home.viewAll"
+        to="/projects"
+      />
+      <div class="mt-8 grid gap-5 md:grid-cols-2">
+        <ProjectCard
+          v-for="(project, i) in featured"
+          :key="project.slug"
+          :project="project"
+          :type-label="c.projects.types[project.type]"
+          :category="c.projects.categoryLabel"
+          :style="{ '--reveal-delay': `${i * 80}ms` }"
+        />
+      </div>
+    </section>
+
+    <!-- About -->
+    <section
+      data-section="about"
+      class="blueprint-panel"
+    >
+      <div class="reveal grid gap-8 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center">
+        <div>
+          <h2 class="text-2xl font-semibold tracking-tight sm:text-3xl">
+            {{ c.home.about.title }}
+          </h2>
+          <p class="mt-4 max-w-2xl font-handwriting text-xl leading-8 text-muted-foreground">
+            {{ c.home.about.text }}
+          </p>
+          <NuxtLink
+            to="/about"
+            class="focus-ring mt-6 inline-flex items-center text-sm font-semibold text-primary underline-offset-4 hover:underline"
+          >
+            {{ c.home.about.link }}
+          </NuxtLink>
+        </div>
+        <p class="-rotate-2 justify-self-center font-handwriting text-2xl leading-snug text-primary sm:text-3xl lg:justify-self-end">
+          {{ c.home.about.note }}
+        </p>
+      </div>
+
+      <dl class="mt-8 grid gap-6 border-t border-border pt-6 sm:grid-cols-3">
+        <div
+          v-for="(fact, i) in c.home.about.facts"
+          :key="fact.label"
+          class="reveal"
+          :style="{ '--reveal-delay': `${i * 80}ms` }"
+        >
+          <dt class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-muted-foreground">
+            {{ fact.label }}
+          </dt>
+          <dd class="mt-1.5 text-sm font-semibold">
+            {{ fact.value }}
+          </dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Latest writing -->
+    <section data-section="posts">
+      <SectionHeading
+        :title="c.home.latest.title"
+        :description="c.home.latest.description"
+        :link-label="c.home.viewAll"
+        to="/blog"
+      />
+      <div class="mt-8 grid gap-5 md:grid-cols-2">
+        <PostCard
+          v-for="(post, i) in latest"
+          :key="post.slug"
+          :post="post"
+          :category-label="c.blog.filters[post.category]"
+          :min-read="c.blog.minRead"
+          :tags-label="c.blog.tagsLabel"
+          :style="{ '--reveal-delay': `${i * 80}ms` }"
+        />
+      </div>
+    </section>
+
+    <div data-section="subscription">
+      <NewsletterPanel />
     </div>
 
-    <!-- clients -->
-
-    <section class="clients">
-      <h3 class="h3 clients-title">
-        Clients
-      </h3>
-
-      <ul class="clients-list has-scrollbar">
-        <li class="clients-item">
-          <a href="#">
-            <img
-              :src="asset('/images/logo-1-color.png')"
-              alt="client logo"
-            >
-          </a>
-        </li>
-
-        <li class="clients-item">
-          <a href="#">
-            <img
-              :src="asset('/images/logo-2-color.png')"
-              alt="client logo"
-            >
-          </a>
-        </li>
-
-        <li class="clients-item">
-          <a href="#">
-            <img
-              :src="asset('/images/logo-3-color.png')"
-              alt="client logo"
-            >
-          </a>
-        </li>
-
-        <li class="clients-item">
-          <a href="#">
-            <img
-              :src="asset('/images/logo-4-color.png')"
-              alt="client logo"
-            >
-          </a>
-        </li>
-
-        <li class="clients-item">
-          <a href="#">
-            <img
-              :src="asset('/images/logo-5-color.png')"
-              alt="client logo"
-            >
-          </a>
-        </li>
-
-        <li class="clients-item">
-          <a href="#">
-            <img
-              :src="asset('/images/logo-6-color.png')"
-              alt="client logo"
-            >
-          </a>
-        </li>
-      </ul>
-    </section>
-  </article>
+    <CtaPanel
+      :title="c.cta.title"
+      :text="c.cta.text"
+    >
+      <BaseButton :href="site.github">
+        <ion-icon name="logo-github" />
+        <span>{{ c.cta.primary }}</span>
+      </BaseButton>
+      <BaseButton
+        :href="`mailto:${site.email}`"
+        variant="secondary"
+      >
+        <ion-icon name="mail-outline" />
+        <span>{{ c.cta.secondary }}</span>
+      </BaseButton>
+    </CtaPanel>
+  </div>
 </template>

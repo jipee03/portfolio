@@ -1,50 +1,44 @@
 <script setup>
-import { useCookieStore } from '../composables/cookie'
+const c = useSiteContent()
+const accepted = useCookie('accept-cookie', { maxAge: 60 * 60 * 24 * 365 })
 
-const cookie = useCookieStore()
-
+// Only render in the browser: the cookie isn't known when the static page is generated.
+const mounted = ref(false)
 onMounted(() => {
-  useCookieStore()
+  mounted.value = true
 })
 </script>
 
 <template>
-  <Transition name="bounce">
-    <div
-      v-show="!cookie.getCookie"
-      class="container left-0 right-0 mx-auto child md:w-[25%] bg-[#3f3f40] rounded-lg shadow-xl px-6 py-3 bottom-20 fixed z-[100] flex items-center justify-between animate-bounce"
+  <Transition name="v">
+    <aside
+      v-if="mounted && !accepted"
+      class="fixed inset-x-4 bottom-4 z-50 flex items-start gap-4 rounded-xl border border-border bg-card p-4 shadow-lg shadow-black/10 sm:left-auto sm:right-6 sm:bottom-6 sm:max-w-sm"
+      role="dialog"
+      :aria-label="c.cookies.title"
     >
-      <span class="text-[#fafafa]">This site use cookies! 🍪</span>
-      <span
-        class="cursor-pointer p-2 shadow-md rounded bg-[#383838] text-[#fafafa] hover:bg-[#1e1e1f] transition"
-        @click="cookie.setCookie()"
+      <div class="grid flex-1 gap-3">
+        <p class="font-mono text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+          {{ c.cookies.title }}
+        </p>
+        <p class="text-sm leading-6 text-muted-foreground">
+          {{ c.cookies.text }}
+        </p>
+        <div>
+          <BaseButton @click="accepted = 'true'">
+            {{ c.cookies.accept }}
+          </BaseButton>
+        </div>
+      </div>
+
+      <button
+        type="button"
+        class="inline-flex size-8 shrink-0 items-center justify-center rounded-md text-lg text-muted-foreground transition-colors hover:bg-muted"
+        :aria-label="c.cookies.close"
+        @click="accepted = 'true'"
       >
         <ion-icon name="close-outline" />
-      </span>
-    </div>
+      </button>
+    </aside>
   </Transition>
 </template>
-
-<style scoped>
-.bounce-enter-active {
-  animation: bounce-in 0.5s;
-}
-
-.bounce-leave-active {
-  animation: bounce-in 0.5s reverse;
-}
-
-@keyframes bounce-in {
-  0% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(1.25);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
-</style>

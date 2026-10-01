@@ -1,216 +1,49 @@
 <script setup>
-useHead({
-  title: 'Blog',
+const c = useSiteContent()
+
+useHead({ title: () => c.value.meta.blog })
+
+const category = ref('all')
+
+const filters = computed(() => Object.entries(c.value.blog.filters).map(([value, label]) => ({ value, label })))
+const posts = computed(() => {
+  const items = c.value.blog.items
+  return category.value === 'all' ? items : items.filter(item => item.category === category.value)
 })
 </script>
 
 <template>
-  <article
-    class="blog active"
-    data-page="blog"
-  >
-    <header>
-      <h2 class="h2 article-title">
-        {{ $t('pageTitles.blog') }}
-      </h2>
-    </header>
+  <div class="page-blocks">
+    <PageHero
+      :eyebrow="c.blog.eyebrow"
+      :title="c.blog.title"
+      :description="c.blog.description"
+      image="/images/blog.svg"
+    />
 
-    <section class="blog-posts">
-      <ul class="blog-posts-list">
-        <li class="blog-post-item">
-          <a href="#">
+    <section
+      data-section="post-list"
+      :aria-label="c.blog.filterLabel"
+    >
+      <div class="reveal">
+        <FilterButtons
+          v-model="category"
+          :options="filters"
+          :label="c.blog.filterLabel"
+        />
+      </div>
 
-            <figure class="blog-banner-box">
-              <img
-                :src="asset('/images/blog-1.jpg')"
-                alt="Design conferences in 2022"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot" />
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
-
-              <p class="blog-text">
-                Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img
-                :src="asset('/images/blog-2.jpg')"
-                alt="Best fonts every designer"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot" />
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-              <p class="blog-text">
-                Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img
-                :src="asset('/images/blog-3.jpg')"
-                alt="Design digest #80"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot" />
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-              <p class="blog-text">
-                Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis
-                suscipit.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img
-                :src="asset('/images/blog-4.jpg')"
-                alt="UI interactions of the week"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot" />
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-              <p class="blog-text">
-                Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris
-                nisi.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img
-                :src="asset('/images/blog-5.jpg')"
-                alt="The forgotten art of spacing"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot" />
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-              <p class="blog-text">
-                Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-
-        <li class="blog-post-item">
-          <a href="#">
-
-            <figure class="blog-banner-box">
-              <img
-                :src="asset('/images/blog-6.jpg')"
-                alt="Design digest #79"
-                loading="lazy"
-              >
-            </figure>
-
-            <div class="blog-content">
-
-              <div class="blog-meta">
-                <p class="blog-category">Design</p>
-
-                <span class="dot" />
-
-                <time datetime="2022-02-23">Fab 23, 2022</time>
-              </div>
-
-              <h3 class="h3 blog-item-title">Design digest #79</h3>
-
-              <p class="blog-text">
-                Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-              </p>
-
-            </div>
-
-          </a>
-        </li>
-      </ul>
+      <div class="mt-8 grid gap-5 md:grid-cols-2">
+        <PostCard
+          v-for="(post, i) in posts"
+          :key="post.slug"
+          :post="post"
+          :category-label="c.blog.filters[post.category]"
+          :min-read="c.blog.minRead"
+          :tags-label="c.blog.tagsLabel"
+          :style="{ '--reveal-delay': `${(i % 2) * 80}ms` }"
+        />
+      </div>
     </section>
-  </article>
+  </div>
 </template>

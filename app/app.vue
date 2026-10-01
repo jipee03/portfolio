@@ -1,31 +1,17 @@
 <script setup>
-const loadingPage = ref()
-
-onBeforeMount(() => {
-  loadingPage.value = false
-})
+const ready = ref(false)
 
 onMounted(() => {
   setTimeout(() => {
-    loadingPage.value = true
-  }, 1000)
+    ready.value = true
+  }, 900)
 })
 </script>
 
 <template>
-  <LoadingPage v-show="!loadingPage" />
+  <PageLoader :visible="!ready" />
 
   <NuxtLayout>
     <NuxtPage transition />
   </NuxtLayout>
 </template>
-
-<style>
-.v-enter-active, .v-leave-active {
-  transition: opacity 0.5s ease;
-}
-
-.v-enter-from, .v-leave-to {
-  opacity: 0;
-}
-</style>
