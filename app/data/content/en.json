@@ -15,12 +15,12 @@
     "dark": "Dark"
   },
   "home": {
-    "eyebrow": "Vue · Nuxt · Clean interfaces",
-    "title": "Building Reliable Web Experiences.",
-    "description": "Civil engineer turned web developer, crafting maintainable interfaces and polished products with Vue, Nuxt and modern tooling.",
+    "eyebrow": "Cybersecurity · Cyberintelligence · Information Systems",
+    "title": "Be welcome!",
+    "description": "I am driven by a philosophy of continuous improvement, constantly seeking to learn more and refine my engineering skills in the cybersecurity landscape.",
     "projects": "Projects",
     "github": "GitHub",
-    "caption": "Built in Porto · shipped worldwide",
+    "caption": "Open for work and collaboration.",
     "featured": {
       "title": "Featured projects",
       "description": "Focused projects built around real, recurring needs."
@@ -93,29 +93,17 @@
   "about": {
     "title": "About Me",
     "eyebrow": "About Me",
-    "heading": "Engineering dependable software from real constraints.",
-    "description": "I am Gustavo Lima, a civil engineer turned web developer based in Porto, building maintainable interfaces, tools and products for the web.",
+    "heading": "Investigating adversary operations and building secure infrastructure.",
+    "description": "I am Gustavo Lima, an Information Systems engineer and recent cybersecurity Master's graduate based in Porto. ",
     "experience": {
-      "title": "Experience",
-      "description": "A career spanning web development and civil engineering.",
+      "title": "Work Experience",
+      "description": "",
       "items": [
         {
-          "period": "2023–Present",
-          "title": "Web Developer",
-          "org": "Freelance",
-          "text": "Designing and building websites and web apps with Vue and Nuxt, from first sketch to deployment."
-        },
-        {
-          "period": "2019–2023",
-          "title": "Site Engineer",
-          "org": "Construction",
-          "text": "Coordinated site works, quantities and documentation, learning to deliver to specification, on time and under real constraints."
-        },
-        {
-          "period": "2017–2019",
-          "title": "Junior Civil Engineer",
-          "org": "Engineering Office",
-          "text": "Supported structural and infrastructure projects with calculations, drawings and technical reports."
+          "period": "February 2026 – July 2026",
+          "title": "R&D Intern",
+          "org": "Qascom SRL",
+          "text": "[Placeholder text --- to be changed]"
         }
       ]
     },
@@ -123,16 +111,35 @@
       "title": "Education",
       "items": [
         {
-          "period": "2021–2022",
-          "title": "Modern Web Development",
-          "org": "Online courses",
-          "text": "Self-directed learning across JavaScript, Vue, Nuxt and Tailwind CSS, applied to personal and client projects."
+          "period": "2024–2026",
+          "title": "MSc in International Cybersecurity and Cyberintelligence",
+          "org": "Arqus Alliance",
+          "text": "[Placeholder text --- to be changed]"
         },
         {
-          "period": "2012–2017",
-          "title": "Civil Engineering",
-          "org": "University",
-          "text": "Undergraduate degree in Civil Engineering with a focus on structures and construction management."
+          "period": "2021–2024",
+          "title": "BSc in Engineering and Management of Information Systems",
+          "org": "University of Minho",
+          "text": "[Placeholder text --- to be changed]"
+        }
+      ]
+    },
+    "development": {
+      "title": "Professional Development",
+      "items": [
+        {
+          "period": "July 2026 | Amsterdam, Netherlands",
+          "title": "Ransomware Defense Summer Bootcamp",
+          "url": "https://virtual-routes.org/ransomware-defence-summer-bootcamp/",
+          "org": "Virtual Routes",
+          "text": "[Placeholder text --- to be changed]"
+        },
+        {
+          "period": "September 2026 | Porto, Portugal",
+          "title": "AppSec Days Portugal",
+          "url": "https://appsecdays.pt/",
+          "org": "OWASP",
+          "text": "[Placeholder text --- to be changed]"
         }
       ]
     },

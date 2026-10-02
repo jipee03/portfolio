@@ -111,7 +111,7 @@ useHead({ title: () => c.value.meta.about })
                 :key="item"
                 class="inline-flex items-center gap-2 rounded-lg border border-border bg-background px-3 py-1.5 text-sm font-medium transition-colors hover:border-primary/40 hover:bg-accent hover:text-primary"
               >
-                <!-- Placeholder mark: swap for a logo <img> per item if you like. -->
+                <!-- Placeholder mark: swap for a logo <img> per item if you like.  -->
                 <span
                   class="size-1.5 rotate-45 bg-primary/60"
                   aria-hidden="true"
@@ -124,7 +124,56 @@ useHead({ title: () => c.value.meta.about })
       </div>
     </section>
 
+    <!-- Development -->
+    <section data-section="timeline">
+      <SectionHeading :title="c.about.development.title" />
+      <div class="mt-10 grid gap-5 md:grid-cols-2">
+        <article
+          v-for="(item, i) in c.about.development.items"
+          :key="item.title"
+          class="reveal group flex h-full flex-col overflow-hidden rounded-xl border border-border bg-card transition-colors duration-200 hover:border-primary/40"
+          :style="{ '--reveal-delay': `${i * 80}ms` }"
+        >
+          <header class="blueprint-panel flex items-center justify-between gap-4 border-b border-border px-6 py-3 font-mono text-xs text-muted-foreground">
+            <span>{{ item.period }}</span>
+            <span
+              class="text-muted-foreground/50"
+              aria-hidden="true"
+            >{{ String(i + 1).padStart(2, '0') }}</span>
+          </header>
+          <div class="flex flex-1 flex-col gap-3 p-6">
+            <div>
+              <h3 class="text-balance text-lg font-semibold leading-6 tracking-tight transition-colors duration-200 group-hover:text-primary">
+                <!-- `url` in en.json turns the title into an external link. -->
+                <a
+                  v-if="item.url"
+                  :href="item.url"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="focus-ring underline-offset-4 hover:underline"
+                >{{ item.title }}<ion-icon
+                  name="open-outline"
+                  class="ml-1.5 inline-block align-[-0.1em] text-base text-muted-foreground"
+                  aria-hidden="true"
+                /></a>
+                <template v-else>
+                  {{ item.title }}
+                </template>
+              </h3>
+              <p class="mt-1.5 font-mono text-xs uppercase tracking-[0.08em] text-primary">
+                {{ item.org }}
+              </p>
+            </div>
+            <p class="text-pretty text-sm leading-6 text-muted-foreground">
+              {{ item.text }}
+            </p>
+          </div>
+        </article>
+      </div>
+    </section>
+
     <!-- Sponsorship -->
+    <!--
     <section>
       <div class="reveal flex flex-col gap-6 rounded-2xl border border-primary/20 bg-primary/5 p-6 sm:flex-row sm:items-center sm:justify-between sm:p-10">
         <div class="max-w-2xl">
@@ -148,8 +197,9 @@ useHead({ title: () => c.value.meta.about })
           {{ c.about.sponsor.note }} ♥
         </p>
       </div>
-    </section>
+    </section> -->
 
+    <!--
     <CtaPanel
       :title="c.about.cta.title"
       :text="c.about.cta.text"
@@ -166,5 +216,6 @@ useHead({ title: () => c.value.meta.about })
         <span>{{ c.about.cta.secondary }}</span>
       </BaseButton>
     </CtaPanel>
+    -->
   </div>
 </template>

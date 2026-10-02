@@ -71,7 +71,7 @@ const latest = computed(() => c.value.blog.items.slice(0, 2))
             :alt="site.name"
             width="500"
             height="500"
-            class="absolute inset-x-[22%] top-[14%] w-[56%] object-contain"
+            class="absolute left-1/2 top-[46%] w-[56%] -translate-x-1/2 -translate-y-1/2 object-contain"
           >
         </div>
         <span
