@@ -207,12 +207,14 @@
       "all": "All",
       "open-source": "Open source",
       "client": "Client work",
-      "personal": "Personal"
+      "personal": "Personal",
+      "academia": "Academia"
     },
     "types": {
       "open-source": "Open source",
       "client": "Client work",
-      "personal": "Personal"
+      "personal": "Personal",
+      "academia": "Academia"
     },
     "categoryLabel": "Web",
     "empty": "No projects in this category yet.",
@@ -284,6 +286,18 @@
         "url": "https://github.com/jipee03",
         "title": "Dotfiles",
         "description": "My Linux setup and developer tooling, scripted so a fresh machine is productive in minutes."
+      },
+      {
+        "slug": "static-analzer",
+        "type": "academia",
+        "tags": [
+          "Cybersecurity",
+          "Portfolio"
+        ],
+        "url": "",
+        "title": "C Language Static Analyzer",
+        "description": "My Linux setup and developer tooling, scripted so a fresh machine is productive in minutes."
+      
       }
     ]
   },
