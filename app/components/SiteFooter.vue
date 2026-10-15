@@ -1,5 +1,5 @@
 <script setup>
-import { navLinks, site } from '~/data/site'
+import { site } from '~/data/site'
 
 const c = useSiteContent()
 
@@ -8,8 +8,6 @@ const socials = [
   { label: 'LinkedIn', icon: 'logo-linkedin', href: site.linkedin },
   { label: 'Email', icon: 'mail-outline', href: `mailto:${site.email}` },
 ]
-
-const linkClass = 'focus-ring text-muted-foreground transition-colors hover:text-primary'
 </script>
 
 <template>

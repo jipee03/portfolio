@@ -189,6 +189,7 @@ const latest = computed(() => c.value.blog.items.slice(0, 2))
         <ion-icon name="mail-outline" />
         <span>{{ c.cta.secondary }}</span>
       </BaseButton>
-    </CtaPanel>-->
+    </CtaPanel>
+    -->
   </div>
 </template>
