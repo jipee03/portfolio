@@ -167,11 +167,14 @@ const latest = computed(() => c.value.blog.items.slice(0, 2))
       </div>
     </section>
 
-    <div data-section="subscription">
+    <!-- Newsletter  -->
+    <!-- <div data-section="subscription">
       <NewsletterPanel />
     </div>
+    -->
 
-    <CtaPanel
+    <!-- Cta -->
+    <!-- <CtaPanel
       :title="c.cta.title"
       :text="c.cta.text"
     >
@@ -186,6 +189,6 @@ const latest = computed(() => c.value.blog.items.slice(0, 2))
         <ion-icon name="mail-outline" />
         <span>{{ c.cta.secondary }}</span>
       </BaseButton>
-    </CtaPanel>
+    </CtaPanel>-->
   </div>
 </template>

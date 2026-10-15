@@ -19,71 +19,10 @@ const linkClass = 'focus-ring text-muted-foreground transition-colors hover:text
       aria-hidden="true"
     />
 
-    <div class="px-4 py-12 sm:px-8 lg:px-14 lg:py-16">
-      <div class="grid gap-12 lg:grid-cols-[minmax(0,1.35fr)_minmax(22rem,0.65fr)]">
-        <div>
-          <NuxtLink
-            to="/"
-            class="focus-ring inline-flex"
-            :aria-label="`${site.name}, ${c.nav.home}`"
-          >
-            <Logo size="lg" />
-          </NuxtLink>
-          <p class="mt-6 font-mono text-xs font-semibold uppercase tracking-[0.16em] text-primary">
-            {{ c.footer.role }}
-          </p>
-          <p class="mt-3 max-w-xl text-balance text-xl font-medium leading-8 tracking-tight sm:text-2xl">
-            {{ c.footer.statement }}
-          </p>
-        </div>
-
-        <div class="grid grid-cols-2 gap-8">
-          <nav :aria-label="c.footer.quick">
-            <p class="mb-4 text-sm font-semibold">
-              {{ c.footer.quick }}
-            </p>
-            <ul class="grid gap-3 text-sm">
-              <li
-                v-for="link in navLinks"
-                :key="link.to"
-              >
-                <NuxtLink
-                  :to="link.to"
-                  :class="linkClass"
-                >
-                  {{ c.nav[link.key] }}
-                </NuxtLink>
-              </li>
-            </ul>
-          </nav>
-
-          <nav :aria-label="c.footer.connect">
-            <p class="mb-4 text-sm font-semibold">
-              {{ c.footer.connect }}
-            </p>
-            <ul class="grid gap-3 text-sm">
-              <li
-                v-for="item in socials"
-                :key="item.label"
-              >
-                <a
-                  :href="item.href"
-                  :target="item.href.startsWith('http') ? '_blank' : undefined"
-                  rel="noreferrer"
-                  :class="linkClass"
-                >{{ item.label }}</a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
-
-      <div class="mt-12 flex flex-col gap-6 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
+    <div class="px-4 py-8 sm:px-8 lg:px-14">
+      <div class="flex flex-col-reverse items-center gap-5 sm:flex-row sm:justify-between">
         <div class="text-sm text-muted-foreground">
           <p>© {{ new Date().getFullYear() }} {{ site.name }}. {{ c.footer.rights }}</p>
-          <p class="mt-1">
-            {{ c.footer.built }}
-          </p>
         </div>
 
         <nav :aria-label="c.footer.social">
