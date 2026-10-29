@@ -28,9 +28,9 @@
     "viewAll": "View All",
     "about": {
       "title": "Driven by curiosity",
-      "text": "Question everything. Especially what seems secure.",
+      "text": "To protect something, first learn how it breaks.",
       "link": "About Me",
-      "note": "think like an attacker",
+      "note": "...think like an attacker",
       "facts": [
         {
           "label": "Background",
@@ -42,7 +42,7 @@
         },
         {
           "label": "Focus",
-          "value": "Threat intelligence, blue team & red team"
+          "value": "Not yet determined, my experience will tell"
         }
       ]
     },
@@ -82,8 +82,8 @@
   "about": {
     "title": "About Me",
     "eyebrow": "About Me",
-    "heading": "Investigating adversary operations and building secure infrastructure.",
-    "description": "I am Gustavo Lima, an Information Systems engineer and recent cybersecurity Master's graduate based in Porto. ",
+    "heading": "Where I'm headed",
+    "description": "I’m interested in cybersecurity from every angle: how attackers operate, how systems are defended, and how infrastructure is built to hold up. I’m still exploring where I fit best, and I’m looking for a role where I can learn across the field. Open to remote work or relocating anywhere in Europe, and beyond for the right opportunity.",
     "experience": {
       "title": "Work Experience",
       "description": "",
@@ -91,8 +91,9 @@
         {
           "period": "February 2026 – July 2026",
           "title": "R&D Intern",
+          "post": "rnd-intern-qascom",
           "org": "Qascom SRL",
-          "text": "[Placeholder text --- to be changed]"
+          "text": "Developed my Master's thesis on applying deep learning techniques for the detection and classification of jamming interference."
         }
       ]
     },
@@ -102,14 +103,16 @@
         {
           "period": "2024–2026",
           "title": "MSc in International Cybersecurity and Cyberintelligence",
+          "post": "msc-cybersecurity-cyberintelligence",
           "org": "Arqus Alliance",
-          "text": "[Placeholder text --- to be changed]"
+          "text": "University of Padova · Vilnius University · University of Granada · University of Minho"
         },
         {
           "period": "2021–2024",
           "title": "BSc in Engineering and Management of Information Systems",
+          "post": "bsc-information-systems",
           "org": "University of Minho",
-          "text": "[Placeholder text --- to be changed]"
+          "text": ""
         }
       ]
     },
@@ -117,58 +120,102 @@
       "title": "Professional Development",
       "items": [
         {
+          "period": "October 2026 - Present | Vila do Conde, Portugal",
+          "title": "Senior Basketball Team Director",
+          "post": "senior-team-director",
+          "org": "Clube Desportivo José Régio",
+          "text": "Coordinate the organisation and logistics of the senior team and act as the link between players, coaching staff and the club board."
+        },
+        {
           "period": "July 2026 | Amsterdam, Netherlands",
           "title": "Ransomware Defense Summer Bootcamp",
-          "url": "https://virtual-routes.org/ransomware-defence-summer-bootcamp/",
+          "post": "ransomware-defense-bootcamp",
           "org": "Virtual Routes",
           "text": "Got 1st place in the final challenge of the bootcamp, which involved building a ransomware awareness tool fit for SME use."
         },
         {
           "period": "September 2026 | Porto, Portugal",
           "title": "AppSec Days Portugal",
-          "url": "https://appsecdays.pt/",
+          "post": "appsec-days-portugal",
           "org": "OWASP",
-          "text": ""
+          "text": "Attended talks on securing AI-assisted development and LLM applications, including threat modeling for AI systems and indirect prompt injection, as well as software supply chain attacks."
         }
       ]
     },
     "working": {
       "title": "Working set",
-      "description": "The technologies, interests and everyday tools behind the work.",
+      "description": "The frameworks, tools and areas I've worked with across cybersecurity.",
       "sets": [
         {
-          "label": "Technologies",
+          "label": "Frameworks",
           "tags": [
-            "Vue",
-            "Nuxt",
-            "JavaScript",
-            "TypeScript",
-            "Tailwind CSS",
-            "Pinia"
+            "MITRE ATT&CK",
+            "NIST CSF",
+            "ISO/IEC 27001",
+            "CIS Controls",
+            "FAIR"
           ]
         },
         {
-          "label": "AI Tools",
+          "label": "Threat Intelligence",
           "tags": [
-            "Claude Code",
-            "GitHub Copilot"
+            "MISP",
+            "Virus Total",
+            "Shodan",
+            "Censys",
+            "Maltego",
+            "OpenCTI",
+            "STIX/TAXII"
+          ]
+        },
+        {
+          "label": "Network & Detection",
+          "tags": [
+            "Wireshark",
+            "Nmap",
+            "Suricata",
+            "Zeek",
+            "pfsense",
+            "aircrack-ng"
+          ]
+        },
+        {
+          "label": "SIEM & Monitoring",
+          "tags": [
+            "Wazuh",
+            "Sysmon",
+            "ELK Stack",
+            "Security Onion"
+          ]
+        },
+        {
+          "label": "Offensive & AppSec",
+          "tags": [
+            "Kali Linux",
+            "Metasploit",
+            "Burp Suite",
+            "OWASP ZAP",
+            "SQLMap",
+            "Nessus"
+          ]
+        },
+        {
+          "label": "Forensics & IR",
+          "tags": [
+            "The Hive",
+            "Autopsy",
+            "Hashcat",
+            "Ansible"
           ]
         },
         {
           "label": "Interests",
           "items": [
-            "Product design",
-            "Developer tools",
-            "Open source"
-          ]
-        },
-        {
-          "label": "Tools",
-          "tags": [
-            "pnpm",
-            "ESLint",
-            "GitHub Actions",
-            "VS Code"
+            "Threat Intelligence",
+            "Detection & Response",
+            "Offensive Security",
+            "Secure Infrastructure",
+            "Cybersecurity Research"
           ]
         }
       ]
@@ -190,26 +237,25 @@
   "projects": {
     "title": "Projects",
     "eyebrow": "Selected work",
-    "description": "Focused web projects and tools built around real, recurring needs.",
+    "description": "Research, tools and hands-on security work from my studies, competitions and own time.",
     "filterLabel": "Type",
     "filters": {
       "all": "All",
-      "open-source": "Open source",
-      "client": "Client work",
+      "academic": "Academic",
       "personal": "Personal",
-      "academia": "Academia"
+      "competitions": "Competitions"
     },
     "types": {
-      "open-source": "Open source",
+      "competitions": "Competitions",
       "personal": "Personal",
-      "academia": "Academia"
+      "academic": "Academic"
     },
     "categoryLabel": "Security",
-    "empty": "No projects in this category yet.",
+    "empty": "Nothing here yet. More on the way.",
     "items": [
       {
         "slug": "static-analyser",
-        "type": "academia",
+        "type": "academic",
         "tags": [
           "Cybersecurity",
           "C",
@@ -218,7 +264,7 @@
         ],
         "url": "https://github.com/guinucool/c-static-analyzer-vu",
         "title": "C Language Static Analyser",
-        "description": "[Placeholder text --- to be changed]."
+        "description": "Security of Applications"
       }
     ]
   },
@@ -228,29 +274,102 @@
     "description": "Practical notes on the web, engineering and the craft of building things that last.",
     "filters": {
       "all": "All",
-      "nuxt": "Nuxt",
-      "career": "Career",
-      "vue": "University",
-      "javascript": "JavaScript"
+      "experience": "Work Experience",
+      "education": "Education",
+      "development": "Professional Development",
+      "notes": "Notes"
     },
     "filterLabel": "Filter articles by category",
     "minRead": "min read",
     "tagsLabel": "Tags",
     "items": [
       {
-        "slug": "building-a-portfolio-with-nuxt-4",
-        "category": "nuxt",
-        "date": "2026-08-24",
-        "minutes": 8,
+        "slug": "senior-team-director",
+        "category": "development",
+        "period": "October 2026 - Present | Vila do Conde, Portugal",
         "tags": [
-          "Nuxt",
-          "Vue",
-          "Tailwind CSS"
+          "Leadership",
+          "Team Management"
         ],
-        "title": "Building a Portfolio with Nuxt 4",
-        "description": "How I built this site with Nuxt 4, Tailwind and a small content layer, and deployed it as a static site."
+        "title": "Senior Basketball Team Director",
+        "org": "Clube Desportivo José Régio",
+        "description": "Coordinate the organisation and logistics of the senior team and act as the link between players, coaching staff and the club board.",
+        "url": "https://cdjregio.pt/",
+        "body": []
+      },
+      {
+        "slug": "appsec-days-portugal",
+        "category": "development",
+        "period": "September 2026 | Porto, Portugal",
+        "tags": [
+          "AppSec",
+          "LLM Security",
+          "Supply Chain"
+        ],
+        "title": "AppSec Days Portugal",
+        "org": "OWASP",
+        "description": "Attended talks on securing AI-assisted development and LLM applications, including threat modeling for AI systems and indirect prompt injection, as well as software supply chain attacks.",
+        "url": "https://appsecdays.pt/",
+        "body": []
+      },
+      {
+        "slug": "ransomware-defense-bootcamp",
+        "category": "development",
+        "period": "July 2026 | Amsterdam, Netherlands",
+        "tags": [
+          "Ransomware",
+          "Awareness",
+          "SMEs"
+        ],
+        "title": "Ransomware Defense Summer Bootcamp",
+        "org": "Virtual Routes",
+        "description": "Got 1st place in the final challenge of the bootcamp, which involved building a ransomware awareness tool fit for SME use.",
+        "url": "https://virtual-routes.org/ransomware-defence-summer-bootcamp/",
+        "body": []
+      },
+      {
+        "slug": "rnd-intern-qascom",
+        "category": "experience",
+        "period": "February 2026 – July 2026",
+        "tags": [
+          "Deep Learning",
+          "GNSS",
+          "Jamming"
+        ],
+        "title": "R&D Intern",
+        "org": "Qascom SRL",
+        "description": "Developed my Master's thesis on applying deep learning techniques for the detection and classification of jamming interference.",
+        "body": []
+      },
+      {
+        "slug": "msc-cybersecurity-cyberintelligence",
+        "category": "education",
+        "period": "2024–2026",
+        "tags": [
+          "Cybersecurity",
+          "Cyberintelligence"
+        ],
+        "title": "MSc in International Cybersecurity and Cyberintelligence",
+        "org": "Arqus Alliance",
+        "description": "University of Padova · Vilnius University · University of Granada · University of Minho",
+        "body": []
+      },
+      {
+        "slug": "bsc-information-systems",
+        "category": "education",
+        "period": "2021–2024",
+        "tags": [
+          "Information Systems",
+          "Management"
+        ],
+        "title": "BSc in Engineering and Management of Information Systems",
+        "org": "University of Minho",
+        "description": "BSc in Engineering and Management of Information Systems",
+        "body": []
       }
-    ]
+    ],
+    "close": "Close",
+    "visit": "Visit website"
   },
   "meta": {
     "home": "Gustavo's Portfolio",

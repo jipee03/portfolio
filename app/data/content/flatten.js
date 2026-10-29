@@ -5,7 +5,7 @@
 // translated, re-translated or corrected by hand without touching anything else.
 
 // Keys whose values are identifiers, links, dates or names that must never be translated.
-export const KEEP_KEYS = new Set(['slug', 'url', 'type', 'date', 'category', 'tags'])
+export const KEEP_KEYS = new Set(['slug', 'url', 'type', 'date', 'category', 'tags', 'post', 'image'])
 
 /** Every translatable string in the content, as { path: text }. */
 export function flatten(value, path = [], out = {}) {

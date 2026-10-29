@@ -159,7 +159,6 @@ const latest = computed(() => c.value.blog.items.slice(0, 2))
           v-for="(post, i) in latest"
           :key="post.slug"
           :post="post"
-          :category-label="c.blog.filters[post.category]"
           :min-read="c.blog.minRead"
           :tags-label="c.blog.tagsLabel"
           :style="{ '--reveal-delay': `${i * 80}ms` }"

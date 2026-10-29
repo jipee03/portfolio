@@ -18,7 +18,7 @@ const posts = computed(() => {
       :eyebrow="c.blog.eyebrow"
       :title="c.blog.title"
       :description="c.blog.description"
-      image="/images/blog.svg"
+      image="/images/peter-2.jpg"
     />
 
     <section
@@ -38,7 +38,6 @@ const posts = computed(() => {
           v-for="(post, i) in posts"
           :key="post.slug"
           :post="post"
-          :category-label="c.blog.filters[post.category]"
           :min-read="c.blog.minRead"
           :tags-label="c.blog.tagsLabel"
           :style="{ '--reveal-delay': `${(i % 2) * 80}ms` }"

@@ -12,7 +12,7 @@ useHead({ title: () => c.value.meta.about })
       :eyebrow="c.about.eyebrow"
       :title="c.about.heading"
       :description="c.about.description"
-      image="/images/about.svg"
+      image="/images/personal_picture.JPG"
     />
 
     <!-- Experience -->
@@ -42,7 +42,9 @@ useHead({ title: () => c.value.meta.about })
               {{ item.period }}
             </p>
             <h3 class="mt-1 font-semibold tracking-tight transition-colors duration-200 group-hover:text-primary sm:mt-0">
-              {{ item.title }}
+              <PostLink :slug="item.post">
+                {{ item.title }}
+              </PostLink>
             </h3>
             <p class="mt-1 font-mono text-xs uppercase tracking-[0.08em] text-primary">
               {{ item.org }}
@@ -75,7 +77,9 @@ useHead({ title: () => c.value.meta.about })
           <div class="flex flex-1 flex-col gap-3 p-6">
             <div>
               <h3 class="text-balance text-lg font-semibold leading-6 tracking-tight transition-colors duration-200 group-hover:text-primary">
-                {{ item.title }}
+                <PostLink :slug="item.post">
+                  {{ item.title }}
+                </PostLink>
               </h3>
               <p class="mt-1.5 font-mono text-xs uppercase tracking-[0.08em] text-primary">
                 {{ item.org }}
@@ -144,21 +148,10 @@ useHead({ title: () => c.value.meta.about })
           <div class="flex flex-1 flex-col gap-3 p-6">
             <div>
               <h3 class="text-balance text-lg font-semibold leading-6 tracking-tight transition-colors duration-200 group-hover:text-primary">
-                <!-- `url` in en.json turns the title into an external link. -->
-                <a
-                  v-if="item.url"
-                  :href="item.url"
-                  target="_blank"
-                  rel="noreferrer"
-                  class="focus-ring underline-offset-4 hover:underline"
-                >{{ item.title }}<ion-icon
-                  name="open-outline"
-                  class="ml-1.5 inline-block align-[-0.1em] text-base text-muted-foreground"
-                  aria-hidden="true"
-                /></a>
-                <template v-else>
+                <!-- `post` in en.json links the title to that blog post's frame. -->
+                <PostLink :slug="item.post">
                   {{ item.title }}
-                </template>
+                </PostLink>
               </h3>
               <p class="mt-1.5 font-mono text-xs uppercase tracking-[0.08em] text-primary">
                 {{ item.org }}

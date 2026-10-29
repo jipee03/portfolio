@@ -1,57 +1,57 @@
 <script setup>
-const props = defineProps({
+defineProps({
   post: { type: Object, required: true },
-  categoryLabel: { type: String, required: true },
   minRead: { type: String, required: true },
   tagsLabel: { type: String, required: true },
 })
 
-const { localeProperties } = useI18n()
-
-// Fixed timezone so the prerendered date matches the browser's.
-const date = computed(() => new Intl.DateTimeFormat(localeProperties.value.language, {
-  dateStyle: 'medium',
-  timeZone: 'UTC',
-}).format(new Date(props.post.date)))
+const frame = usePostFrame()
 </script>
 
 <template>
   <div class="reveal h-full">
-    <article class="group flex h-full flex-col rounded-xl border border-border bg-card p-5 shadow-sm shadow-black/5 transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md motion-reduce:transform-none">
-      <div class="flex flex-wrap items-center gap-2 font-mono text-xs text-muted-foreground">
-        <span>{{ categoryLabel }}</span>
-        <span aria-hidden="true">·</span>
-        <time :datetime="post.date">{{ date }}</time>
-        <span aria-hidden="true">·</span>
-        <span>{{ post.minutes }} {{ minRead }}</span>
-      </div>
+    <a
+      :href="frame.href(post.slug)"
+      class="focus-ring group flex h-full flex-col rounded-xl border border-border bg-card p-5 shadow-sm shadow-black/5 transition hover:-translate-y-0.5 hover:border-primary/35 hover:shadow-md motion-reduce:transform-none"
+      @click="frame.open(post.slug, $event)"
+    >
+      <PostMeta
+        :post="post"
+        :min-read="minRead"
+      />
 
       <h3 class="mt-3 text-lg font-semibold tracking-tight transition-colors group-hover:text-primary">
-        <a
-          v-if="post.url"
-          :href="post.url"
-          class="focus-ring"
-        >{{ post.title }}</a>
-        <template v-else>
-          {{ post.title }}
-        </template>
+        {{ post.title }}
       </h3>
+      <p
+        v-if="post.org"
+        class="mt-1.5 font-mono text-xs uppercase tracking-[0.08em] text-primary"
+      >
+        {{ post.org }}
+      </p>
       <p class="mt-3 text-sm leading-6 text-muted-foreground">
         {{ post.description }}
       </p>
 
-      <ul
-        class="mt-auto flex flex-wrap gap-2 pt-5"
-        :aria-label="tagsLabel"
-      >
-        <li
-          v-for="tag in post.tags"
-          :key="tag"
-          class="rounded-md border border-border px-2 py-1 font-mono text-xs text-muted-foreground"
+      <div class="mt-auto flex items-end justify-between gap-3 pt-5">
+        <ul
+          class="flex flex-wrap gap-2"
+          :aria-label="tagsLabel"
         >
-          {{ tag }}
-        </li>
-      </ul>
-    </article>
+          <li
+            v-for="tag in post.tags"
+            :key="tag"
+            class="rounded-md border border-border px-2 py-1 font-mono text-xs text-muted-foreground"
+          >
+            {{ tag }}
+          </li>
+        </ul>
+        <ion-icon
+          name="arrow-forward-outline"
+          class="shrink-0 text-lg text-muted-foreground transition-all group-hover:translate-x-0.5 group-hover:text-primary"
+          aria-hidden="true"
+        />
+      </div>
+    </a>
   </div>
 </template>

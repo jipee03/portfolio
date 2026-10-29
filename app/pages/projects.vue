@@ -18,10 +18,13 @@ const projects = computed(() => {
       :eyebrow="c.projects.eyebrow"
       :title="c.projects.title"
       :description="c.projects.description"
-      image="/images/projects.svg"
+      image="/images/peter.jpg"
     />
 
-    <section :aria-label="c.projects.filterLabel">
+    <section
+      :aria-label="c.projects.filterLabel"
+      class="!pt-2 lg:!pt-6"
+    >
       <div class="reveal">
         <p class="mb-2 text-sm font-semibold">
           {{ c.projects.filterLabel }}

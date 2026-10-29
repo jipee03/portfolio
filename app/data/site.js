@@ -4,7 +4,7 @@ export const site = {
   initials: 'GL',
   location: 'Porto, Portugal',
   // TODO: replace with your real address (used by the "Write me" button and newsletter form).
-  email: 'hello@example.com',
+  email: 'gugasjobhunt@gmail.com',
   github: 'https://github.com/jipee03',
   linkedin: 'https://www.linkedin.com/in/gustavofelima',
   avatar: '/images/my-avatar.png',

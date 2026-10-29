@@ -38,5 +38,6 @@ useHead({
     </div>
 
     <CookieBar />
+    <PostFrame />
   </div>
 </template>
